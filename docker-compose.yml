@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./chatbot-backend
+    container_name: chatbot-backend-container
+    ports:
+      - "5000:5000"
+    restart: always
+
+  frontend:
+    build: ./chatbot-frontend
+    container_name: chatbot-frontend-container
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: always
