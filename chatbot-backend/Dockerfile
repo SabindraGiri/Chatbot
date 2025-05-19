@@ -17,8 +17,8 @@ RUN pip3 install --break-system-packages -r requirements.txt
 # Copy rest of the application (including chatbot.py)
 COPY . .
 
-# Expose backend port
-EXPOSE 5000
+# Expose correct port for Google Cloud Run
+EXPOSE 8080
 
 # Start the backend
 CMD ["node", "server.js"]
